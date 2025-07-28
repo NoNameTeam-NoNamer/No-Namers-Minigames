@@ -68,11 +68,11 @@ XXXXX       XXXXXXX
 XXXXX        XXXXXX)" << endl;
 	cout << "\nCopyright No Name Team 2025,all rights reserved." << endl;
 	// 播放低音 do
-	Beep(262, 200);
+	Beep(262, 150);
 	// 播放中音 mi
-	Beep(330, 200);
+	Beep(330, 150);
 	// 播放高音 so
-	Beep(392, 200);
+	Beep(392, 150);
 	system("pause");
 	system("cls");
 	system("title No Namers' Minigames");
@@ -101,6 +101,12 @@ XXXXX        XXXXXX)" << endl;
 		}
 		if (gameChoice == 10) {
 			cprintf("1;33", "Exiting...\n");
+			// 播放高音 so
+			Beep(392, 150);
+			// 播放中音 mi
+			Beep(330, 150);
+			// 播放低音 do
+			Beep(262, 150);
 			return 0;
 		}
 		else if (gameChoice == 1) {

@@ -68,11 +68,11 @@ XXXXX       XXXXXXX
 XXXXX        XXXXXX)" << endl;
 	cout << "\n(c)No Name Team 2025,保留所有权利。" << endl;
 	// 播放低音 do
-	Beep(262, 200);
+	Beep(262, 150);
 	// 播放中音 mi
-	Beep(330, 200);
+	Beep(330, 150);
 	// 播放高音 so
-	Beep(392, 200);
+	Beep(392, 150);
 	system("pause");
 	system("cls");
 	system("title 某个不想起名的小游戏集");
@@ -101,6 +101,12 @@ XXXXX        XXXXXX)" << endl;
 		}
 		if (gameChoice == 10) {
 			cprintf("1;33", "正在退出...\n");
+			// 播放高音 so
+			Beep(392, 150);
+			// 播放中音 mi
+			Beep(330, 150);
+			// 播放低音 do
+			Beep(262, 150);
 			return 0;
 		}
 		else if (gameChoice == 1) {

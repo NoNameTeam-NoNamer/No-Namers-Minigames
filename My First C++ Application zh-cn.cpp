@@ -39,7 +39,7 @@ static bool isNumber(const std::string& str) {
 }
 int main()
 {
-	system("title No Namers' Minigames");
+	system("title 某个不想起名的小游戏集");
 	system("color 02");
 	cout << R"(                            (c)
        XXXXXXXXXXXXXXXXXXX
@@ -66,7 +66,7 @@ XXXXX     XXX XXXXX
 XXXXX      XXXXXXXX      
 XXXXX       XXXXXXX      
 XXXXX        XXXXXX)" << endl;
-	cout << "\nCopyright No Name Team 2025,all rights reserved." << endl;
+	cout << "\n(c)No Name Team 2025,保留所有权利。" << endl;
 	// 播放低音 do
 	Beep(262, 200);
 	// 播放中音 mi
@@ -75,24 +75,24 @@ XXXXX        XXXXXX)" << endl;
 	Beep(392, 200);
 	system("pause");
 	system("cls");
-	system("title No Namers' Minigames");
-	cout << "No Namers' Minigames 0.1.0" << endl;
-	cout << "This is a debug version,nothing can be sured to add in the final version and the program may crash anytime." << endl;
-	cout << "Don't forget check new version on https://github.com/NoNameTeam-NoNamer/No-Namers-Minigames." << endl;
+	system("title 某个不想起名的小游戏集");
+	cout << "某个不想起名的小游戏集 0.1.0" << endl;
+	cout << "此版本为开发版本，不代表最终品质，程序随时可能崩溃。" << endl;
+	cout << "别忘了前往 https://github.com/NoNameTeam-NoNamer/No-Namers-Minigames 关注最新版本进展！" << endl;
 	cout << endl;
 	int gameChoice;
 	while (1) {
-		cprintf("1;34", "Enter number to select the game you want to play:\n");
-		cprintf("2;34", "1 = Minesweeper\n");
-		cprintf("2;34", "2 = Push Box\n");
-		cprintf("2;34", "3 = Sudoku\n");
-		cprintf("1;34", "4 = Numbermine\n");
-		cprintf("2;34", "5 = Maze\n");
-		cprintf("2;36", "6 = Gluttonous Snake\n");
-		cprintf("2;36", "7 = Chess\n");
-		cprintf("2;32", "8 = Mahjong(Local network needed)\n");
-		cprintf("2;32", "9 = Fight The Landlord(Local network needed)\n");
-		cprintf("1;34", "10 = Exit\n");
+		cprintf("1;34", "输入数字选择以下操作：\n");
+		cprintf("2;34", "1 = 扫雷\n");
+		cprintf("2;34", "2 = 魔盒\n");
+		cprintf("2;34", "3 = 数独\n");
+		cprintf("1;34", "4 = 数雷\n");
+		cprintf("2;34", "5 = 迷宫\n");
+		cprintf("2;36", "6 = 贪吃蛇\n");
+		cprintf("2;36", "7 = 国象\n");
+		cprintf("2;32", "8 = 麻将（需要局域网）\n");
+		cprintf("2;32", "9 = 斗地主（需要局域网）\n");
+		cprintf("1;34", "10 = 退出\n");
 		cin >> noskipws >> gameChoice;
 		cin.clear(); // 重置错误标志
 		cin.ignore(numeric_limits<streamsize>::max(), '\n'); // 清空输入缓冲区
@@ -100,30 +100,30 @@ XXXXX        XXXXXX)" << endl;
 			goto invaildChoice;
 		}
 		if (gameChoice == 10) {
-			cprintf("1;33", "Exiting...\n");
+			cprintf("1;33", "正在退出...\n");
 			return 0;
 		}
 		else if (gameChoice == 1) {
-			cprintf("1;33", "You've selected Minesweeper.But it is developing...\n");
+			cprintf("1;33", "开发中，敬请期待！\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else if (gameChoice == 2) {
-			cprintf("1;33", "You've selected Flying Bird.But it is developing...\n");
+			cprintf("1;33", "开发中，敬请期待！\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else if (gameChoice == 3) {
-			cprintf("1;33", "You've selected Sudoku.But it is developing...\n");
+			cprintf("1;33", "开发中，敬请期待！\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else if (gameChoice == 4) {
             system("cls");
-			system("title No Namers' Minigames 0.1.0 -- Numberbomb");
+			system("title 某个不想起名的小游戏集 0.1.0 -- 数雷");
 			constexpr int MIN_NUMBER = std::numeric_limits<int>::min();
 			constexpr int MAX_NUMBER = std::numeric_limits<int>::max();
 			int Nu_aimNumber = getRand(MIN_NUMBER, MAX_NUMBER), Nu_gameCount = 0,Nu_inputNumber,Nu_Min = MIN_NUMBER,Nu_Max = MAX_NUMBER,Nu_botNumber;
@@ -131,25 +131,25 @@ XXXXX        XXXXXX)" << endl;
 			string Nu_inputStr;
             snprintf(
                 Nu_aimNumberStr, sizeof(Nu_aimNumberStr),
-                "In this game,you will guess the aim number with a bot,it's an integer between %d to %d.\n",
+                "在本游戏中，您需要和一个人机一起找出一个介于%d到%d的整数。\n",
 				MIN_NUMBER, MAX_NUMBER
             );
             cprintf("1;34", Nu_aimNumberStr);
-			cprintf("1;33", "BUT DO NOT input the aim number,or you will step on the Numbermine and lose the game!\n");
+			cprintf("1;33", "但是千万不要说出这个数，不然您将激活地雷！\n");
 			system("pause");
 			while (1)
 			{
 				Nu_gameCount++;
 			Nu_Input:
 				system("cls");
-				system("title No Namers' Minigames 0.1.0 -- Numberbomb");
+				system("title 某个不想起名的小游戏集 0.1.0 -- 数雷");
 				snprintf(
 					Nu_aimNumberStr, sizeof(Nu_aimNumberStr),
-					"Min:%d | Max:%d | Round:%d\n\n",
+					"最小：%d | 最大：%d | 回合：%d\n\n",
 					Nu_Min, Nu_Max, Nu_gameCount
 				);
 				cprintf("1;35", Nu_aimNumberStr);
-				cprintf("1;34", "Please input number:\n");
+				cprintf("1;34", "请输入一个数：\n");
 				
 				cin >> noskipws >> Nu_inputStr;
 				cin.clear(); // 重置错误标志
@@ -159,61 +159,65 @@ XXXXX        XXXXXX)" << endl;
 					Nu_inputNumber = stoi(Nu_inputStr); // 将字符串转换为整数
 					}
 					catch (const std::out_of_range&) {
-						cprintf("1;31", "Input number is out of range.\n");
+						cprintf("1;31", "您输入的数超出了限制！\n");
+						Beep(880, 200);
 						system("pause");
 						goto Nu_Input; // 如果转换失败，重新输入
 					}
 					catch (const std::invalid_argument&) {
-						cprintf("1;31", "Invalid input, please enter a valid integer.\n");
+						cprintf("1;31", "无效输入，请您输入数字！\n");
+						Beep(880, 200);
 						system("pause");
 						goto Nu_Input; // 如果转换失败，重新输入
 					}
 					if (Nu_inputNumber < Nu_Min || Nu_inputNumber > Nu_Max) {
-						cprintf("1;31", "Invalid input, please enter a number between \"Min\" and \"Max\".\n");
+						cprintf("1;31", "您输入的数不在“最小”与“最大”之间！\n");
+						Beep(880, 200);
 						system("pause");
 						goto Nu_Input; // 如果输入不在范围内，重新输入
 					}
 					if (Nu_inputNumber == Nu_aimNumber) {
-						cprintf("1;31", "Boom! You step on the Numbermine!\n");
+						cprintf("1;31", "砰！你踩中了数雷！\n");
 						break; // 炸了，退出循环
 					}
 					else if (Nu_inputNumber < Nu_aimNumber) {
-						cprintf("1;32", "Your guess is lower than the Numbermine.\n");
+						cprintf("1;32", "您的数字比数雷的小。\n");
 						system("pause");
 						Nu_Min = Nu_inputNumber + 1; // 更新最小值
 					Nu_bot:
 						Nu_botNumber = getRand(Nu_Min, Nu_Max); // 让bot猜测
 						snprintf(
 							Nu_aimNumberStr, sizeof(Nu_aimNumberStr),
-							"Bot:%d\n",
+							"人机：%d\n",
 							Nu_botNumber
 						);
 						cprintf("1;34", Nu_aimNumberStr);
 						system("pause");
 						if (Nu_botNumber == Nu_aimNumber) {
-							cprintf("1;31", "Boom! Bot step on the Numbermine!\n");
+							cprintf("1;31", "砰！人机踩中了数雷！\n");
 							break; // 炸了，退出循环
 						}
 						else if (Nu_botNumber < Nu_aimNumber) {
-							cprintf("1;36", "Bot's guess is lower than the Numbermine.\n");
+							cprintf("1;36", "人机的数字比数雷的小。\n");
 							system("pause");
 							Nu_Min = Nu_botNumber + 1; // 更新最小值
 						}
 						else {
-							cprintf("1;36", "Bot's guess is higher than the Numbermine.\n");
+							cprintf("1;36", "人机的数字比数雷的大。\n");
 							system("pause");
 							Nu_Max = Nu_botNumber - 1; // 更新最大值
 						}
 					}
 					else {
-						cprintf("1;32", "Your guess is higher than the Numbermine.\n");
+						cprintf("1;32", "您的数字比数雷的大。\n");
 						system("pause");
 						Nu_Max = Nu_inputNumber - 1; // 更新最大值
 						goto Nu_bot; // 让bot猜测
 					}
 				}
 				else {
-					cprintf("1;31", "Invalid input, please enter a valid integer.\n");
+					cprintf("1;31", "无效输入！请您输入数字！\n");
+					Beep(880, 200);
 					system("pause");
 					goto Nu_Input; // 如果非法，重新输入
 				}
@@ -227,42 +231,42 @@ XXXXX        XXXXXX)" << endl;
 			}
 		}
 		else if (gameChoice == 5) {
-			cprintf("1;33", "You've selected Maze.But it is developing...\n");
+			cprintf("1;33", "开发中，敬请期待！\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else if (gameChoice == 6) {
-			cprintf("1;33", "You've selected Gluttonous Snake.But it is developing...\n");
+			cprintf("1;33", "开发中，敬请期待！\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else if (gameChoice == 7) {
-			cprintf("1;33", "You've selected Chess.But it is developing...\n");
+			cprintf("1;33", "开发中，敬请期待！\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else if (gameChoice == 8) {
-			cprintf("1;33", "You've selected Mahjong.But it is developing...\n");
+			cprintf("1;33", "开发中，敬请期待！\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else if (gameChoice == 9) {
-			cprintf("1;33", "You've selected Fight The Landlord.But it is developing...\n");
+			cprintf("1;33", "开发中，敬请期待！\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else {
 			invaildChoice:
-			cprintf("1;31", "Invalid choice, please try again.\n");
+			cprintf("1;31", "输入无效，请重试！\n");
 			Beep(880, 200);
 			system("pause");
 		}
 		system("cls");
-		system("title No Namers' Minigames");
+		system("title 某个不想起名的小游戏集");
 	}
 }

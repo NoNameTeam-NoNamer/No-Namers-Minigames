@@ -18,5 +18,8 @@
     <ClCompile Include="My First C++ Application.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="My First C++ Application zh-cn.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

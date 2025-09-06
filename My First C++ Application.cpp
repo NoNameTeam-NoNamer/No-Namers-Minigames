@@ -204,7 +204,7 @@ XXXXX        XXXXXX)" << endl;
 	system("cls");
 	system("title No Namers' Minigames 1.0.0");
 	cout << "No Namers' Minigames 1.0.0" << endl;
-	cout << "This is a debug version,nothing can be sured to add in the final version and the program may crash anytime." << endl;
+	cout << "Some games are developing,please waiting for update!" << endl;
 	cout << "Don't forget check new version on https://github.com/NoNameTeam-NoNamer/No-Namers-Minigames." << endl;
 	cout << endl;
 	int gameChoice = 0;
@@ -591,7 +591,7 @@ XXXXX        XXXXXX)" << endl;
 				}
 			}
 			setCursorPos(2+Mi_cursorX*2, 3+Mi_cursorY);
-			Sleep(100);
+			Sleep(128);
 			goto keyCheck;
 			if (0) {
 			EscapeAsk:
@@ -608,20 +608,20 @@ XXXXX        XXXXXX)" << endl;
 			system("title No Namers' Minigames 1.0.0");
 		}
 		else if (gameChoice == 2) {
-			cprintf("1;33", "You've selected Flying Bird.But it is developing...\n");
+			cprintf("1;33", "It is developing...\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else if (gameChoice == 3) {
-			cprintf("1;33", "You've selected Sudoku.But it is developing...\n");
+			cprintf("1;33", "It is developing...\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else if (gameChoice == 4) {
             system("cls");
-			system("title No Namers' Minigames 0.1.0 -- Numberbomb");
+			system("title No Namers' Minigames 1.0.0 -- Numberbomb");
 			constexpr int MIN_NUMBER = std::numeric_limits<int>::min();
 			constexpr int MAX_NUMBER = std::numeric_limits<int>::max();
 			int Nu_aimNumber = getRand(MIN_NUMBER, MAX_NUMBER), Nu_gameCount = 0,Nu_inputNumber,Nu_Min = MIN_NUMBER,Nu_Max = MAX_NUMBER,Nu_botNumber;
@@ -640,10 +640,10 @@ XXXXX        XXXXXX)" << endl;
 				Nu_gameCount++;
 			Nu_Input:
 				system("cls");
-				system("title No Namers' Minigames 0.1.0 -- Numberbomb");
+				system("title No Namers' Minigames 1.0.0 -- Numberbomb");
 				snprintf(
 					Nu_aimNumberStr, sizeof(Nu_aimNumberStr),
-					"Min:%d | Max:%d | Round:%d\n\n",
+					"Min:%d | Max:%d | Round:%d\nYou can enter \"Esc\" to escape.\n",
 					Nu_Min, Nu_Max, Nu_gameCount
 				);
 				cprintf("1;35", Nu_aimNumberStr);
@@ -651,6 +651,10 @@ XXXXX        XXXXXX)" << endl;
 				cin >> noskipws >> Nu_inputStr;
 				cin.clear(); // 重置错误标志
 				cin.ignore(numeric_limits<streamsize>::max(), '\n'); // 清空输入缓冲区
+				if (Nu_inputStr == "esc" || Nu_inputStr == "Esc") {
+					cprintf("1;33", "Back to home page......\n");
+					goto Nu_Escape;
+				}
 				if (isNumber(Nu_inputStr)) { // 检测输入是否是数字
 					try{
 					Nu_inputNumber = stoi(Nu_inputStr); // 将字符串转换为整数
@@ -715,41 +719,44 @@ XXXXX        XXXXXX)" << endl;
 					goto Nu_Input; // 如果非法，重新输入
 				}
 			}
-			byte Nu_beepTime = 64;
-			while (Nu_beepTime > 0)
 			{
-				int Nu_beepLength = 2048 / Nu_beepTime; // 计算每次 beep 的持续时间
-				Beep(1660, Nu_beepLength);
-				Nu_beepTime--;
+				byte Nu_beepTime = 64;
+				while (Nu_beepTime > 0)
+				{
+					int Nu_beepLength = 2048 / Nu_beepTime; // 计算每次 beep 的持续时间
+					Beep(1660, Nu_beepLength);
+					Nu_beepTime--;
+				}
 			}
+		Nu_Escape:
 			system("pause");
 		}
 		else if (gameChoice == 5) {
-			cprintf("1;33", "You've selected Maze.But it is developing...\n");
+			cprintf("1;33", "It is developing...\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else if (gameChoice == 6) {
-			cprintf("1;33", "You've selected Gluttonous Snake.But it is developing...\n");
+			cprintf("1;33", "It is developing...\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else if (gameChoice == 7) {
-			cprintf("1;33", "You've selected Chess.But it is developing...\n");
+			cprintf("1;33", "It is developing...\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else if (gameChoice == 8) {
-			cprintf("1;33", "You've selected Mahjong.But it is developing...\n");
+			cprintf("1;33", "It is developing...\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
 		}
 		else if (gameChoice == 9) {
-			cprintf("1;33", "You've selected Fight The Landlord.But it is developing...\n");
+			cprintf("1;33", "It is developing...\n");
 			system("pause");
 			// Here you would call the function to start the Minesweeper game
 			// For example: startMinesweeper();
